@@ -120,37 +120,37 @@ export default function LearningHub() {
 
         {/* Filter Navigation / File Folders */}
         <div className="relative w-full z-20 mb-margin-desktop">
-          {/* Folders Layer */}
-          <div className="relative flex w-full flex-wrap">
+          {/* Folders Layer - Non-wrapping and responsive size */}
+          <div className="relative flex w-full flex-nowrap overflow-x-auto scrollbar-none gap-x-1">
             <button 
               onClick={() => setActiveRepo('documentation')}
-              className={`relative z-30 px-8 py-4 font-label-mono text-xs sm:text-sm hover:brightness-110 transition-all tab-angle ${
+              className={`relative z-30 px-4 py-3 sm:px-8 sm:py-4 font-label-mono text-[10px] sm:text-sm hover:brightness-110 transition-all tab-angle ${
                 activeRepo === 'documentation' 
                   ? 'bg-modernist-blue text-on-primary-container' 
                   : 'bg-modernist-blue/40 text-on-primary-container/60'
               }`}
             >
-              <span className="relative z-10 block pr-8">DOCUMENTATION</span>
+              <span className="relative z-10 block pr-6 sm:pr-8">DOCUMENTATION</span>
             </button>
             <button 
               onClick={() => setActiveRepo('workshops')}
-              className={`relative z-20 px-8 py-4 font-label-mono text-xs sm:text-sm hover:brightness-110 transition-all tab-angle -ml-6 ${
+              className={`relative z-20 px-4 py-3 sm:px-8 sm:py-4 font-label-mono text-[10px] sm:text-sm hover:brightness-110 transition-all tab-angle -ml-6 ${
                 activeRepo === 'workshops' 
                   ? 'bg-modernist-purple text-on-primary-container' 
                   : 'bg-modernist-purple/40 text-on-primary-container/60'
               }`}
             >
-              <span className="relative z-10 block pr-8">WORKSHOPS</span>
+              <span className="relative z-10 block pr-6 sm:pr-8">WORKSHOPS</span>
             </button>
             <button 
               onClick={() => setActiveRepo('case-studies')}
-              className={`relative z-10 px-8 py-4 font-label-mono text-xs sm:text-sm hover:brightness-110 transition-all tab-angle -ml-6 ${
+              className={`relative z-10 px-4 py-3 sm:px-8 sm:py-4 font-label-mono text-[10px] sm:text-sm hover:brightness-110 transition-all tab-angle -ml-6 ${
                 activeRepo === 'case-studies' 
                   ? 'bg-modernist-yellow text-background font-bold' 
                   : 'bg-modernist-yellow/40 text-background/60'
               }`}
             >
-              <span className="relative z-10 block pr-8">CASE STUDIES</span>
+              <span className="relative z-10 block pr-6 sm:pr-8">CASE STUDIES</span>
             </button>
           </div>
 

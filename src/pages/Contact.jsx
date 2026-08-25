@@ -46,8 +46,8 @@ export default function Contact() {
       {/* Folder Navigation */}
       <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop w-full relative z-20">
         
-        {/* Overlapping Tabs */}
-        <div className="flex flex-wrap items-end -mb-tab-overlap relative z-30 ml-4">
+        {/* Overlapping Tabs - Non-wrapping and responsive size */}
+        <div className="flex flex-nowrap overflow-x-auto scrollbar-none items-end -mb-tab-overlap relative z-30 ml-2 sm:ml-4 gap-x-1">
           {tabs.map((tab, idx) => {
             const isActive = activeTab === tab.id;
             let zIndexClass = 'z-10 opacity-80';
@@ -61,17 +61,17 @@ export default function Contact() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`tab-angle px-8 pt-4 pb-8 pr-12 sm:pr-16 relative hover:-translate-y-2 transition-all font-headline-md text-lg sm:text-2xl text-on-primary-container ${tab.colorClass} ${zIndexClass}`}
+                className={`tab-angle px-4 pt-3 pb-6 pr-8 sm:px-8 sm:pt-4 sm:pb-8 sm:pr-16 relative hover:-translate-y-1 transition-all font-headline-md text-sm sm:text-2xl text-on-primary-container ${tab.colorClass} ${zIndexClass}`}
               >
                 {tab.label}
               </button>
             );
           })}
 
-          {/* Banner Fill Header */}
-          <div className={`flex-grow h-20 self-end -ml-4 z-10 border-t border-surface-white/20 transition-colors duration-500 ${getBannerColor()}`}>
+          {/* Banner Fill Header - Hidden on mobile viewports to prevent squeezing tab layout */}
+          <div className={`hidden md:block flex-grow h-20 self-end -ml-4 z-10 border-t border-surface-white/20 transition-colors duration-500 ${getBannerColor()}`}>
             <div className="h-full flex items-center justify-end px-8">
-              <span className="font-label-mono text-xs text-on-primary-container uppercase opacity-70 tracking-widest hidden md:inline">
+              <span className="font-label-mono text-xs text-on-primary-container uppercase opacity-70 tracking-widest">
                 Physical Coordinates & Routing &lt;
               </span>
             </div>

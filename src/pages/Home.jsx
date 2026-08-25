@@ -55,8 +55,8 @@ export default function Home() {
 
       {/* Content Sections as Folder Tabs */}
       <section id="about-tabs-section" className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32">
-        {/* Tabbed Navigation */}
-        <div className="relative z-20 flex flex-wrap gap-x-2 gap-y-2 mb-tab-overlap items-end ml-8">
+        {/* Tabbed Navigation - Non-wrapping and responsive sizing */}
+        <div className="relative z-20 flex flex-nowrap overflow-x-auto scrollbar-none mb-tab-overlap items-end ml-2 sm:ml-8 gap-x-1">
           {tabs.map((tab, idx) => {
             const isActive = activeTab === tab.id;
             // Define active overlap layers
@@ -71,7 +71,7 @@ export default function Home() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`tab-angle px-8 pt-4 pb-6 font-headline-md text-2xl text-on-primary-container transition-all hover:-translate-y-2 relative ${tab.colorClass} ${zIndexClass}`}
+                className={`tab-angle px-4 pt-3 pb-5 text-sm sm:px-8 sm:pt-4 sm:pb-6 font-headline-md text-base sm:text-2xl text-on-primary-container transition-all hover:-translate-y-1 relative ${tab.colorClass} ${zIndexClass}`}
               >
                 {tab.label}
               </button>
